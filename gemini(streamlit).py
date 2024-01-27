@@ -66,7 +66,7 @@ def retrieval_chain():
         retriever=vector_db,
         chain_type_kwargs={
             'verbose': True,
-            'prompt': prompt(),
+            #'prompt': prompt(),
             'memory': ConversationBufferMemory(
                 memory_key='history',
                 input_key='question'
