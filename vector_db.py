@@ -27,7 +27,7 @@ def text_split(data):
 
 def vector_store(docs):
     chroma_database=Chroma(
-                        embedding=cohere_embedding,
+                        embedding_function=cohere_embedding,
                         persist_directory='chroma_db'
                     )
     return chroma_database.as_retriever()
