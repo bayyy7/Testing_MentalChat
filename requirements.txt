@@ -1,5 +1,5 @@
 langchain==0.0.342
-langchain-google-genai==0.0.5
+langchain-google-genai
 langchain-community==0.0.13
 pypdf
 chromadb==0.3.29
