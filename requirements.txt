@@ -1,4 +1,4 @@
-langchain
+langchain==0.1.0
 langchain-community>=0.0.16
 langchain-core
 langchain-google-genai
