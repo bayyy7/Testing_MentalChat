@@ -2,6 +2,6 @@ langchain
 langchain-community
 langchain-google-genai
 pypdf
-chromadb
+chromadb==0.3.29
 pandas
 cohere
