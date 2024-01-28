@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 import streamlit as st
-from langchain.document_loaders import PyPDFLoader, DataFrameLoader
+from langchain.document_loaders import DataFrameLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import CohereEmbeddings
 from langchain.vectorstores import Chroma
