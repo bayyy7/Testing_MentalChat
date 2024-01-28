@@ -1,10 +1,10 @@
 import os
 import pandas as pd
 import streamlit as st
-from langchain.document_loaders import DataFrameLoader
+from langchain_community.document_loaders import DataFrameLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import CohereEmbeddings
-from langchain.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 
 COHERE_API_KEY=st.secrets['COHERE_API_KEY']
