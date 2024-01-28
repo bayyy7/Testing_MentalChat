@@ -1,7 +1,7 @@
 langchain
 langchain-core
 langchain-google-genai
-langchain-community
+langchain-community --updgrade
 pypdf
 chromadb==0.3.29
 pandas
