@@ -12,7 +12,7 @@ embedding = HuggingFaceEmbeddings(model_name='firqaaa/indo-sentence-bert-base')
 df=pd.read_csv('Dataset/store_data - Sheet1.csv')
 
 def df_loader(df):
-    articles=DataFrameLoader(df,page_content_column="Title")
+    articles=DataFrameLoader(df,page_content_column="Description")
     document=articles.load()
     return document
 
@@ -25,9 +25,8 @@ def text_split(data):
     return docs
 
 def vector_store(docs):
-    chroma_database=Chroma.from_documents(
-                        documents=docs,
-                        embedding=embedding,
+    chroma_database=Chroma(
+                        embedding_function=embedding,
                         persist_directory='chroma_db'
                     )
     return chroma_database.as_retriever()
