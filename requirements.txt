@@ -5,3 +5,4 @@ pypdf
 chromadb==0.3.29
 pandas
 cohere
+sentence-transformers
