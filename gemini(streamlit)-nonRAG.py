@@ -36,11 +36,11 @@ def get_llm() -> GoogleGenerativeAI:
     
     return GoogleGenerativeAI(model="gemini-pro", 
                         google_api_key=GEMINI_API_KEY,
-                        temperature=0.72,
+                        temperature=0.9,
                         top_p=0.6,
                         top_k=1,
                         repeat_penalty=1.1,
-                        max_output_tokens=512)
+                        max_output_tokens=1024)
 
 
 def get_llm_chain():
