@@ -3,12 +3,11 @@ import pandas as pd
 import streamlit as st
 from langchain_community.document_loaders import DataFrameLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import CohereEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 
-COHERE_API_KEY=st.secrets['COHERE_API_KEY']
-cohere_embedding=CohereEmbeddings(cohere_api_key=COHERE_API_KEY,  model="embed-multilingual-v3.0")
+embedding = HuggingFaceEmbeddings(model_name='firqaaa/indo-sentence-bert-base')
 
 df=pd.read_csv('Dataset/store_data - Sheet1.csv')
 
@@ -28,7 +27,7 @@ def text_split(data):
 def vector_store(docs):
     chroma_database=Chroma.from_documents(
                         documents=docs,
-                        embedding=cohere_embedding,
+                        embedding=embedding,
                         persist_directory='chroma_db'
                     )
     return chroma_database.as_retriever()

@@ -33,7 +33,7 @@ class Message:
 def get_llm() -> GoogleGenerativeAI:
     llm = GoogleGenerativeAI(model="gemini-pro", 
                         google_api_key=GEMINI_API_KEY,
-                        temperature=0.7,
+                        temperature=0.9,
                         top_p=0.6,
                         top_k=1,
                         repeat_penalty=1.1,
@@ -42,12 +42,14 @@ def get_llm() -> GoogleGenerativeAI:
 
 
 def prompt():
-    template = """Gunakan konteks berikut sebagai referensi untuk menjawab pertanyaan. 
+    template = """Gunakan informasi berikut ini sebagai referensi untuk menjawab pertanyaan. Namun, kamu dapat menggunakan pengetahuanmu sendiri
+        bila informasi yang diberikan tidak lengkap.
         {context}
         
         Mulai sekarang, kamu adalah AI asisten bernama 'MentalChat'. Bertindaklah sebagai seorang Psikolog profesional yang dapat 
         melakukan diagnosis masalah kesehatan mental dengan cara mengidentifikasi masalah pasien secara bertahap. Berdasarkan identifikasi tersebut,
-        berikan jawaban dan saran yang akan membuat pasien merasa lebih baik.
+        berikan jawaban dan saran yang akan membuat pasien merasa lebih baik. Kemudian, untuk pertanyaan diluar konteks kesehatan mental jawablah dengan
+        'Maaf, masukan Anda diluar konteks kesehatan mental'.
         Question: {question}
         History: {history}
         Answer:"""
