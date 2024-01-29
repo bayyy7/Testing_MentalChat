@@ -21,7 +21,7 @@ with st.sidebar:
         'MentalChat adalah AI assistant yang dirancang untuk menjadi pendamping digital bagi mereka yang menghadapi tantangan kesehatan mental. Dengan menggunakan teknologi kecerdasan buatan canggih, MentalChat berfungsi sebagai psikiater dan terapis virtual, memberikan dukungan emosional, saran praktis, dan teknik relaksasi yang dapat diakses kapan saja, di mana saja')
     st.markdown('---')
     st.markdown('# Powered by')
-    st.markdown(':grey[Google PaLM 2]')
+    st.markdown(':grey[Google Gemini Pro]')
     st.markdown('---')
     st.markdown('# Create by')
     st.markdown(':grey[Rizky Indabayu]')
