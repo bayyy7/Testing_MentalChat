@@ -43,7 +43,7 @@ def get_llm() -> GoogleGenerativeAI:
 
 def prompt():
     template = """Gunakan informasi berikut ini sebagai referensi untuk menjawab pertanyaan. Namun, kamu dapat menggunakan pengetahuanmu sendiri
-        bila informasi yang diberikan tidak lengkap.
+        bila tidak menemukan jawaban pada informasi berikut ini.
         {context}
         
         Mulai sekarang, kamu adalah AI asisten bernama 'MentalChat'. Bertindaklah sebagai seorang Psikolog profesional yang dapat 
