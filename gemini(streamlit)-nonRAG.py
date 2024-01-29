@@ -7,9 +7,7 @@ from langchain_google_genai import GoogleGenerativeAI
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import PromptTemplate
 
-load_dotenv()
-GEMINI_API_KEY=os.environ.get('GEMINI_API_KEY', default='')
-
+GEMINI_API_KEY=st.secrets['GEMINI_API_KEY']
 
 st.set_page_config(page_title="💬 MentalChat")
 
