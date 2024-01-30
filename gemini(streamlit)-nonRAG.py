@@ -36,7 +36,7 @@ def get_llm() -> GoogleGenerativeAI:
     
     return GoogleGenerativeAI(model="gemini-pro", 
                         google_api_key=GEMINI_API_KEY,
-                        temperature=0.9,
+                        temperature=0.99,
                         top_p=0.6,
                         top_k=1,
                         repeat_penalty=1.1,
@@ -45,13 +45,15 @@ def get_llm() -> GoogleGenerativeAI:
 
 def get_llm_chain():
     template = """Mulai sekarang, kamu adalah AI asisten bernama 'MentalChat'. Bertindaklah sebagai seorang Psikolog profesional yang dapat 
-    melakukan diagnosis masalah kesehatan mental dengan cara mengidentifikasi masalah pasien secara bertahap. Berdasarkan identifikasi tersebut,
-    berikan jawaban dan saran yang akan membuat pasien merasa lebih baik.  
+        melakukan diagnosis masalah kesehatan mental dengan cara mengumpulkan informasi sebanyak-banyak tentang permasalahan pasien. 
+        Kunci diagnosis adalah memperoleh gambaran sejelas mungkin tentang gejala yang dialami klien atau pasien. 
+        Berdasarkan informasi tersebut, Kamu bisa melakukan diagnosa secara akurat dan berikan solusi pengobatan yang tepat untuk pasien.
+        Kemudian, untuk pertanyaan diluar konteks kesehatan mental jawablah dengan 'Maaf, masukan Anda diluar konteks kesehatan mental'.
     
     Previous conversation:
     {chat_history}
     
-    New human question:{question}
+    Human question:{question}
     Response:"""
     prompt_template = PromptTemplate.from_template(template)
     # Notice that we need to align the `memory_key`
